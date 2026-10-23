@@ -96,6 +96,45 @@ Daily updates will record work completed, checks performed, outcomes, issues dis
 - Choose an appropriate geolocation mapping strategy.
 - Complete the data dictionary and schema design.
 
+### Day 2 — Data Modeling and MySQL Setup
+
+**Completed**
+- Documented table grain, primary/composite keys, relationships, and safe join considerations in `reports/data_model.md`.
+- Generated `outputs/data_dictionary.csv`, documenting 9 datasets and 52 columns.
+- Created the `ecommerce_analytics` database in MySQL 8.0.
+- Created and populated all nine relational tables.
+- Imported and verified all source datasets against their expected row counts.
+- Executed six foreign-key integrity checks; all returned zero unmatched rows.
+
+**Database validation results**
+
+| Table | Rows loaded |
+|---|---:|
+| Customers | 99,441 |
+| Orders | 99,441 |
+| Order items | 112,650 |
+| Order payments | 103,886 |
+| Order reviews | 99,224 |
+| Products | 32,951 |
+| Sellers | 3,095 |
+| Category translation | 71 |
+| Geolocation | 1,000,163 |
+
+**Key modeling decisions**
+- Use `customer_unique_id` to identify customers across multiple customer records.
+- Preserve order items, payment records, and reviews at their appropriate levels of detail.
+- Avoid directly joining order items and payments before aggregation, as this can inflate totals.
+- Account for duplicate geolocation prefixes before using geolocation in analytical joins.
+- Preserve review records even when review IDs repeat; do not assume `review_id` is unique.
+
+**Open items**
+- Complete further data-quality checks, including key uniqueness and value/date validation.
+- Define and validate SQL business metrics.
+- Reconcile revenue and order metrics before building Power BI visuals.
+
+**Next**
+- Begin SQL-based analysis of revenue trends, order performance, customer retention, delivery performance, and product categories.
+
 ## Dataset Attribution and License
 
 Source: Olist Brazilian E-Commerce Public Dataset  

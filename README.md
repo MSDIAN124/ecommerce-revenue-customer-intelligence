@@ -242,6 +242,43 @@ Daily updates will record work completed, checks performed, outcomes, issues dis
 - Orders without payment records are excluded from payment-based calculations.
 - Zero-value and canceled-order records are retained rather than removed from the source data.
 
+### Day 7: Revenue & Order Analysis — Validation and Reconciliation
+
+**Objective:** Validate the accuracy of revenue and payment analysis by reconciling monthly payment values, checking payment-to-order integrity, and verifying payment totals across order statuses.
+
+**Tasks completed**
+- Reconciled monthly payment values against the overall recorded payment total.
+- Verified payment records against the `orders` table.
+- Identified orders without payment records using a `LEFT JOIN`.
+- Validated payment totals across all eight order statuses.
+- Created `reports/revenue_order_validation.md` to document validation results and key observations.
+
+**Key findings**
+- Total payment records: 103,886.
+- Orders with payment records: 99,440.
+- Orders with multiple payment records: 2,961.
+- Total recorded payment value: R$16,008,872.12.
+- Monthly-to-overall payment reconciliation difference: R$0.00.
+- Unmatched payment records: 0.
+- Orders without payment records: 1, including one delivered order.
+- Delivered orders: 96,478, of which 96,477 have payment records.
+- Delivered-order payment value: R$15,422,461.77.
+
+**Methodology notes**
+- Used aggregate reconciliation queries to compare monthly and overall payment totals.
+- Used `LEFT JOIN` to identify unmatched payment records and orders without payment records.
+- Used `COUNT(DISTINCT order_id)` to count orders separately from payment records.
+- Treated payment values as recorded transaction amounts, not profit.
+- Documented the missing payment record for further investigation.
+
+**Skills practiced:** SQL aggregation, `LEFT JOIN`, `COUNT(DISTINCT)`, data integrity validation, financial reconciliation, and technical documentation.
+
+**Deliverable:** `reports/revenue_order_validation.md`
+
+**Status:** Completed and pushed to GitHub.
+
+**Commit:** `a7942c4` — Day 7: Add revenue and order validation report.
+
 
 ## Dataset Attribution and License
 

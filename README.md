@@ -132,8 +132,116 @@ Daily updates will record work completed, checks performed, outcomes, issues dis
 - Define and validate SQL business metrics.
 - Reconcile revenue and order metrics before building Power BI visuals.
 
-**Next**
-- Begin SQL-based analysis of revenue trends, order performance, customer retention, delivery performance, and product categories.
+## Day 3 — SQL Business Analysis & Customer Intelligence
+
+**Objective:** Use SQL to analyze revenue, order behavior, product categories, customer retention, delivery performance, and customer experience.
+
+**Work completed:**
+- Created SQL analysis scripts for revenue and order analysis.
+- Analyzed product and category performance.
+- Investigated customer purchasing frequency and repeat-customer behavior.
+- Evaluated delivery performance and customer review patterns.
+- Documented delivery and customer experience findings.
+
+**Key findings:**
+- Identified 96,096 unique customers.
+- Found 2,997 repeat customers, representing a repeat-customer rate of approximately 3.12%.
+- Identified the distribution of customers by number of orders.
+
+**Deliverables:**
+- `sql/01_revenue_order_analysis.sql`
+- `sql/02_product_category_analysis.sql`
+- `sql/03_customer_intelligence.sql`
+- `sql/04_delivery_performance.sql`
+- `sql/05_customer_experience_analysis.sql`
+- `reports/delivery_performance_findings.md`
+- `reports/customer_experience_findings.md`
+
+**Skills practiced:** SQL aggregations, joins, customer-level analysis, business metrics, and analytical reporting.
+
+---
+
+## Day 4 — Seller Performance Analysis
+
+**Objective:** Evaluate seller performance using sales, delivery timeliness, and customer review indicators.
+
+**Work completed:**
+- Developed SQL queries to analyze seller-level performance.
+- Examined seller-associated product sales.
+- Analyzed late-delivery patterns.
+- Evaluated customer ratings associated with sellers.
+- Documented the findings and their potential business implications.
+
+**Deliverables:**
+- `sql/06_seller_performance_analysis.sql`
+- `reports/seller_performance_findings.md`
+
+**Skills practiced:** SQL joins, aggregations, seller-level KPIs, delivery analysis, and business reporting.
+
+---
+
+## Day 5 — Geographic Analysis
+
+**Objective:** Understand customer and seller distribution across Brazilian states and investigate geographic patterns in sales and freight costs.
+
+**Work completed:**
+- Analyzed the geographic distribution of customers.
+- Compared state-level customer counts.
+- Evaluated seller distribution across states.
+- Analyzed delivered product sales by customer state.
+- Compared same-state and cross-state seller-to-customer transactions.
+- Examined product sales and freight values across geographic transaction groups.
+
+**Key findings:**
+- Identified 96,096 unique customers in the customer dataset.
+- São Paulo (SP) had the highest customer count, with 40,302 customers.
+- São Paulo also had the largest seller presence, with 1,849 out of 3,095 sellers.
+- Cross-state seller-item transactions recorded approximately 9.09 million in product sales and 1.66 million in freight values.
+- Same-state seller-item transactions recorded approximately 4.13 million in product sales and 0.54 million in freight values.
+
+**Deliverables:**
+- `sql/07_geographic_analysis.sql`
+- `reports/geographic_analysis_findings.md`
+
+**Skills practiced:** Geographic segmentation, SQL aggregation, state-level comparisons, and freight analysis.
+
+**Methodological note:** Same-state and cross-state figures are based on seller-item transaction groups. An order may contain items from multiple sellers, so these groups should not be interpreted as mutually exclusive unique-order counts.
+
+---
+
+## Day 6 — Customer Purchasing Behavior & Order Value Analysis
+
+**Objective:** Analyze payment-based order values, delivered-order payment metrics, and customer spending distributions.
+
+**Work completed:**
+- Calculated average recorded payment value per order.
+- Analyzed the distribution of orders across payment-value bands.
+- Investigated zero-value orders and their associated payment types and order statuses.
+- Calculated payment metrics for delivered orders.
+- Aggregated recorded payments by unique customer.
+- Segmented customers into spending bands.
+
+**Key findings:**
+- Analyzed 99,440 orders with recorded payment information.
+- Average recorded payment value per order was approximately 160.99.
+- Total recorded payment value across these orders was approximately 16.01 million.
+- Orders in the 100–249.99 payment-value band formed the largest segment, accounting for approximately 38.69% of orders.
+- Three zero-value orders were identified; all were canceled and associated with the `not_defined` payment type.
+- Delivered orders with recorded payments had an average payment value of approximately 159.86.
+- Among 96,095 customers with recorded payments, approximately 85.17% had total recorded payments below 250.
+
+**Deliverables:**
+- `sql/08_customer_purchasing_behavior.sql`
+- `reports/customer_purchasing_behavior_findings.md`
+
+**Skills practiced:** Order-level aggregation, customer-level spending analysis, conditional aggregation, distribution analysis, and business interpretation.
+
+**Methodological notes:**
+- Payment value is not equivalent to profit or net recognized revenue.
+- Customer spending metrics include recorded payments across order statuses.
+- Orders without payment records are excluded from payment-based calculations.
+- Zero-value and canceled-order records are retained rather than removed from the source data.
+
 
 ## Dataset Attribution and License
 

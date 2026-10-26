@@ -127,27 +127,36 @@ LIMIT 10;
 SELECT
     oi.seller_id,
     COUNT(DISTINCT oi.order_id) AS reviewed_orders,
-    COUNT(*) AS review_records,
-    ROUND(AVG(r.review_score), 2) AS avg_review_score,
+    COUNT(DISTINCT r.order_id) AS orders_with_reviews,
+    ROUND(AVG(r.order_avg_review_score), 2) AS avg_review_score,
 
     ROUND(
         100.0 * SUM(
-            CASE WHEN r.review_score <= 2 THEN 1 ELSE 0 END
-        ) / COUNT(*),
+            CASE
+                WHEN r.order_avg_review_score <= 2 THEN 1
+                ELSE 0
+            END
+        ) / COUNT(DISTINCT r.order_id),
         2
     ) AS low_rating_pct
 
 FROM order_items oi
 JOIN orders o
     ON oi.order_id = o.order_id
-JOIN order_reviews r
+JOIN (
+    SELECT
+        order_id,
+        AVG(review_score) AS order_avg_review_score
+    FROM order_reviews
+    GROUP BY order_id
+) r
     ON o.order_id = r.order_id
 
 WHERE o.order_status = 'delivered'
 
 GROUP BY oi.seller_id
 
-HAVING COUNT(DISTINCT oi.order_id) >= 50
+HAVING COUNT(DISTINCT r.order_id) >= 50
 
-ORDER BY avg_review_score ASC, reviewed_orders DESC
+ORDER BY avg_review_score ASC, orders_with_reviews DESC
 LIMIT 10;

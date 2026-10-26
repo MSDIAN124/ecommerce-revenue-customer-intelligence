@@ -7,6 +7,7 @@
 -- Dataset: Olist Brazilian E-Commerce Public Dataset
 -- ============================================================
 
+USE ecommerce_analytics;
 
 -- ------------------------------------------------------------
 -- 1. DELIVERY DATE COMPLETENESS CHECK

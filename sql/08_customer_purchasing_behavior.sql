@@ -95,7 +95,7 @@ FROM (
     GROUP BY order_id
 ) AS order_totals
 GROUP BY order_value_band
-ORDER BY order_value_band;,
+ORDER BY order_value_band;
 
 -- =========================================================
 -- DAY 6: CUSTOMER PURCHASING BEHAVIOR

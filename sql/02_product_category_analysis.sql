@@ -3,7 +3,7 @@ USE ecommerce_analytics;
 
 -- ============================================================
 -- Project: E-Commerce Revenue & Customer Intelligence
--- File: 01_revenue_order_analysis.sql
+-- File: 02_product_category_analysis.sql
 -- Purpose: PRODUCT CATEGORY PERFORMANCE
 -- Scope: Delivered orders only
 -- Sales metric: Sum of item prices, excluding freight

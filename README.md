@@ -77,7 +77,7 @@ ecommerce-revenue-customer-intelligence/
 |     └── page-5-category-performance.png
 ├── sql/
 │   ├── 01_revenue_order_analysis.sql
-│   ├── 02_profuct_category_analysis.sql
+│   ├── 02_product_category_analysis.sql
 |   ├── 03_customer_intelligence.sql
 |   ├── 04_delivery_performance.sql
 |   ├── 05_customer_experience_analysis.sql
@@ -204,18 +204,16 @@ Important principles:
 The project includes nine SQL analysis scripts covering:
 
 1. Revenue and order analysis
-2. Payment and revenue validation
-3. Delivery performance
-4. Customer experience and reviews
-5. Seller performance
-6. Geographic analysis
-7. Customer purchasing behavior
-8. Repeat-customer analysis
-9. Repaeat-purchase timing
+2. Product and category performance
+3. Customer intelligence and repeat purchasing
+4. Delivery performance
+5. Customer experience and review analysis
+6. Seller performance
+7. Geographic analysis
+8. Customer purchasing behavior and spending distributions
+9. Repeat-purchase timing
 
 Supporting documentation and outputs are available in the reports/ and outputs/ directories.
-
-
 
 
 ## Dashboard Preview

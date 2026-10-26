@@ -43,7 +43,7 @@ This project investigates order and payment performance, delivery operations, re
 | Day | Planned work | Status |
 |---|---|---|
 | 1 | Dataset inventory and initial validation | Completed |
-| 2 | Business questions, data dictionary, and table grain | In progress |
+| 2 | Business questions, data dictionary, and table grain | Completed |
 | 3-5 | Python pipeline, MySQL schema, data loading, and SQL validation | Completed |
 | 6-8 | Revenue, order, and delivery analysis | Completed |
 | 9-10 | Customer intelligence and repeat purchasing | Completed |
@@ -224,8 +224,7 @@ The Power BI report contains five pages designed to explore different aspects of
 
 1. Executive Overview
 
-<img width="725" height="404" alt="image" src="https://github.com/user-attachments/assets/95d3ca67-bbb1-468a-a533-bbbec5889599" />
-
+<img width="725" height="404" alt="page-1-executive-overview" src="https://github.com/user-attachments/assets/5d609370-d7d4-469a-b45a-0ea0bdcfaafd" />
 
 
 Highlights overall payment value, order volume, average order value, repeat-customer rate, monthly trends, and leading product categories.
@@ -239,7 +238,8 @@ Explores product sales contribution, order-item volume by category, and the rela
 
 3. Customer Intelligence
 
-<img width="721" height="407" alt="page-3-customer-intelligence" src="https://github.com/user-attachments/assets/562c01ba-16e7-43ef-80c5-2c59ae462b42" />
+<img width="722" height="406" alt="page-3-customer-intelligence" src="https://github.com/user-attachments/assets/10308037-4685-451b-ba80-8080eae3fbe9" />
+
 
 
 Examines one-time versus repeat customers, repeat-purchase timing, and the geographic distribution of customers.

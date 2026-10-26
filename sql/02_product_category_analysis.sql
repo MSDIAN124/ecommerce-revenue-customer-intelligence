@@ -1,11 +1,15 @@
 
 USE ecommerce_analytics;
 
--- =========================================================
--- PRODUCT CATEGORY PERFORMANCE
+-- ============================================================
+-- Project: E-Commerce Revenue & Customer Intelligence
+-- File: 01_revenue_order_analysis.sql
+-- Purpose: PRODUCT CATEGORY PERFORMANCE
 -- Scope: Delivered orders only
 -- Sales metric: Sum of item prices, excluding freight
--- =========================================================
+-- Dataset: Olist Brazilian E-Commerce Public Dataset
+-- ============================================================
+
 
 SELECT
     COALESCE(

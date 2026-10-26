@@ -9,6 +9,7 @@
 -- Dataset: Olist Brazilian E-Commerce Public Dataset
 -- ============================================================
 
+USE ecommerce_analytics;
 
 -- ------------------------------------------------------------
 -- 1. SELLER DATA BASELINE

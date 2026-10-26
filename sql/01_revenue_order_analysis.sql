@@ -1,12 +1,12 @@
 
 USE ecommerce_analytics;
 
--- =========================================================
--- E-COMMERCE REVENUE AND ORDER ANALYSIS
--- Dataset: Olist Brazilian E-Commerce Public Dataset
+-- ============================================================
+-- Project: E-Commerce Revenue & Customer Intelligence
+-- File: 01_revenue_order_analysis.sql
 -- Purpose: Explore order trends and reconcile payment values
--- =========================================================
-
+-- Dataset: Olist Brazilian E-Commerce Public Dataset
+-- ============================================================
 
 -- 1. DATASET DATE RANGE AND ORDER COUNT
 

@@ -31,12 +31,12 @@ This project investigates order and payment performance, delivery operations, re
 
 | Tool | Purpose|
 |---|---|
-| **Python:** | Data profiling, validation, analysis, and metric reconciliation |
-| **MySQL:**  | Relational data storage, transformations, and analytical queries |
-| **SQL:** | Joins, CTEs, aggregations, window functions, and business metrics |
-| **Power BI:** | Interactive reporting and decision support |
-| **DAX:** | KPI and analytical measure calculations |
-| **Git & GitHub:** | Version control, documentation, and progress tracking |
+| **Python** | Data profiling, validation, analysis, and metric reconciliation |
+| **MySQL**  | Relational data storage, transformations, and analytical queries |
+| **SQL** | Joins, CTEs, aggregations, window functions, and business metrics |
+| **Power BI** | Interactive reporting and decision support |
+| **DAX** | KPI and analytical measure calculations |
+| **Git & GitHub** | Version control, documentation, and progress tracking |
 
 ## Project Timeline
 
@@ -68,7 +68,6 @@ The analysis uses nine related datasets covering customers, orders, order items,
 
 ```text
 ecommerce-revenue-customer-intelligence/
-├── data
 ├── docs/
 │   └── dashboard_screenshot/
 |     ├── page-1-executive-overview.png
@@ -225,31 +224,36 @@ The Power BI report contains five pages designed to explore different aspects of
 
 1. Executive Overview
 
-![alt text](page-1-executive-overview.png)
+<img width="723" height="409" alt="page-1-executive-overview" src="https://github.com/user-attachments/assets/865c373e-423f-46c0-a260-adce48289f36" />
+
 
 Highlights overall payment value, order volume, average order value, repeat-customer rate, monthly trends, and leading product categories.
 
 2. Revenue & Product Performance
 
-![alt text](page-2-revenue-product.png)
+<img width="722" height="410" alt="page-2-revenue-product" src="https://github.com/user-attachments/assets/a5b01a80-b357-425a-9a07-45a45ee3b080" />
+
 
 Explores product sales contribution, order-item volume by category, and the relationship between product prices and freight costs.
 
 3. Customer Intelligence
 
-![alt text](page-3-customer-intelligence.png)
+<img width="721" height="407" alt="page-3-customer-intelligence" src="https://github.com/user-attachments/assets/562c01ba-16e7-43ef-80c5-2c59ae462b42" />
+
 
 Examines one-time versus repeat customers, repeat-purchase timing, and the geographic distribution of customers.
 
 4. Order & Delivery Performance
 
-![alt text](page-4-delivery-performance.png)
+<img width="721" height="407" alt="page-4-delivery-performance" src="https://github.com/user-attachments/assets/71fc3974-56b1-4d25-bd6f-1bd0944049ea" />
+
 
 Evaluates delivery outcomes, late-delivery rates, monthly delivery times, and actual versus estimated delivery performance.
 
 5. Category Performance
 
-![alt text](page-5-category-performance.png)
+<img width="720" height="407" alt="page-5-category-performance" src="https://github.com/user-attachments/assets/f6078eed-b575-400a-b16a-c98a438f7b9e" />
+
 
 Compares product categories by sales value, order-item volume, average item price, and contribution to total product sales.
 

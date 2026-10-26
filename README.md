@@ -224,7 +224,8 @@ The Power BI report contains five pages designed to explore different aspects of
 
 1. Executive Overview
 
-<img width="723" height="409" alt="page-1-executive-overview" src="https://github.com/user-attachments/assets/865c373e-423f-46c0-a260-adce48289f36" />
+<img width="725" height="404" alt="image" src="https://github.com/user-attachments/assets/95d3ca67-bbb1-468a-a533-bbbec5889599" />
+
 
 
 Highlights overall payment value, order volume, average order value, repeat-customer rate, monthly trends, and leading product categories.

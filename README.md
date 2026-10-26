@@ -8,6 +8,17 @@
 
 This project investigates order and payment performance, delivery operations, repeat purchasing, and customer experience. The goal is to turn validated transaction-level data into actionable business insights while maintaining reproducible analysis and transparent data-quality checks.
 
+### Key highlights
+
+- Integrated and analyzed nine related e-commerce datasets.
+- Built a relational data model in MySQL.
+- Developed SQL analyses covering revenue, orders, customers, products, sellers, geography, delivery performance, and repeat purchasing.
+- Reconciled payment totals across detailed and monthly aggregations.
+- Created a five-page interactive Power BI report.
+- Documented analytical findings, metric definitions, and business recommendations.
+
+
+
 ## Business Questions
 
 - How do recorded item values, freight values, payment values, and order statuses compare?
@@ -18,11 +29,14 @@ This project investigates order and payment performance, delivery operations, re
 
 ## Technology Stack
 
-- **Python:** Data profiling, validation, analysis, and metric reconciliation
-- **MySQL:** Relational data storage, transformations, and analytical queries
-- **SQL:** Joins, CTEs, aggregations, window functions, and business metrics
-- **Power BI:** Interactive reporting and decision support
-- **Git & GitHub:** Version control, documentation, and progress tracking
+| Tool | Purpose|
+|---|---|
+| **Python:** | Data profiling, validation, analysis, and metric reconciliation |
+| **MySQL:**  | Relational data storage, transformations, and analytical queries |
+| **SQL:** | Joins, CTEs, aggregations, window functions, and business metrics |
+| **Power BI:** | Interactive reporting and decision support |
+| **DAX:** | KPI and analytical measure calculations |
+| **Git & GitHub:** | Version control, documentation, and progress tracking |
 
 ## Project Timeline
 
@@ -30,27 +44,74 @@ This project investigates order and payment performance, delivery operations, re
 |---|---|---|
 | 1 | Dataset inventory and initial validation | Completed |
 | 2 | Business questions, data dictionary, and table grain | In progress |
-| 3-5 | Python pipeline, MySQL schema, data loading, and SQL validation | Planned |
-| 6-8 | Revenue, order, and delivery analysis | Planned |
-| 9-10 | Customer intelligence and repeat purchasing | Planned |
-| 11-12 | Statistical investigation and evidence checks | Planned |
-| 13-15 | Power BI report and core release | Planned |
+| 3-5 | Python pipeline, MySQL schema, data loading, and SQL validation | Completed |
+| 6-8 | Revenue, order, and delivery analysis | Completed |
+| 9-10 | Customer intelligence and repeat purchasing | Completed |
+| 11-12 | Statistical investigation and evidence checks | Completed |
+| 13-15 | Power BI report and core release | Completed |
 | 16-18 | Technical polish and justified extensions | Planned |
 | 19-20 | Documentation, findings, screenshots, and interview preparation | Planned |
+
+
+## Data Model & Validation
+
+The analysis uses nine related datasets covering customers, orders, order items, products, sellers, payments, reviews, and product category translations, along with the remaining supporting source data.
+
+**Data preparation and validation included:**
+1. Loading datasets into MySQL.
+2. Checking source row counts.
+3. Reviewing relationships and join behavior.
+4. Reconciling payment values across detailed and monthly aggregations.
+5. Defining business metrics consistently for SQL analysis and Power BI reporting.
 
 ## Repository Structure
 
 ```text
-data/
-  raw/                 # Local only; excluded from Git
-  processed/           # Local working data; excluded from Git
-src/                   # Python scripts
-notebooks/             # Exploratory analysis
-sql/                   # Schema and analytical queries
-powerbi/               # Power BI project files
-reports/               # Documentation and findings
-outputs/               # Selected, reviewed analytical outputs
-tests/                 # Data and metric validation tests
+ecommerce-revenue-customer-intelligence/
+├── data
+├── docs/
+│   └── dashboard_screenshot/
+|     ├── page-1-executive-overview.png
+|     ├── page-2-revenue-product.png
+|     ├── page-3-customer-intelligence.png
+|     ├── page-4-delivery-performance.png
+|     └── page-5-category-performance.png
+├── sql/
+│   ├── 01_revenue_order_analysis.sql
+│   ├── 02_profuct_category_analysis.sql
+|   ├── 03_customer_intelligence.sql
+|   ├── 04_delivery_performance.sql
+|   ├── 05_customer_experience_analysis.sql
+|   ├── 06_seller_performance_analysis.sql
+|   ├── 07_geographic_analysis.sql
+|   ├── 08_customer_purchasing_behavior.sql
+│   └── 09_repeat_purchase_timing.sql
+├── reports/
+|   ├── business_questions.md
+│   ├── data_model.md
+│   ├── revenue_order_validation.md
+│   ├── delivery_performance_findings.md
+│   ├── customer_experience_findings.md
+│   ├── seller_performance_findings.md
+│   ├── geographic_analysis_findings.md
+│   ├── customer_purchasing_behavior_findings.md
+│   └── repeat_purchase_analysis.md
+├── outputs/
+|   ├── data_dictionary.csv
+|   ├── dataset_inventory.csv
+|   └── missing_values_report.csv
+├── powerbi/
+|   └── Ecommerce_Revenue_Customer_Intelligence_Dashboard.pbix
+├── scr/
+|   ├── create_data_dictionary.py
+|   ├── create_data_quality
+|   ├── inspect_dataset.py
+|   ├── inspect_mapping_issue.py
+|   ├── inspect_review_duplicates.py
+|   ├── prepare_reviews_for_mysql.py
+|   ├── validate_dataset.py
+|   └── validate_relationships.py
+└── README.md
 ```
 
 ## Data Quality and Methodology
@@ -69,215 +130,184 @@ Important principles:
 
 ## Progress Log
 
-Daily updates will record work completed, checks performed, outcomes, issues discovered, deliverables, and the next planned steps.
+### Day 1 — Dataset Inventory and Initial Validation
+- Identified and reviewed the nine source datasets.
+- Inspected dataset structures, columns, row counts, and key fields.
+- Checked data quality and prepared the datasets for further analysis.
 
-### Day 1 - Dataset Inventory and Initial Validation
+**Status:** Completed
 
-**Completed**
-- Identified all nine source CSV files.
-- Created a Python virtual environment and installed pandas.
-- Generated dataset inventory and missing-value reports.
-- Checked key uniqueness and foreign-key relationships.
-- Investigated repeated review IDs, category mapping exceptions, and geolocation duplication.
-- Defined the initial business questions.
+### Day 2 — Business Questions, Data Dictionary, and Table Grain
+- Defined the project's analytical scope and key business questions.
+- Documented the data model and table grain.
+- Created a data dictionary to describe the available fields and their analytical purpose.
+- Identified key relationships between customers, orders, products, sellers, payments, and reviews.
 
-**Key findings**
-- Orders: 99,441 rows.
-- Order items: 112,650 rows.
-- Payments: 103,886 rows.
-- Reviews: 99,224 rows.
-- The geolocation source contains 1,000,163 rows, including 261,831 exact duplicate rows.
-- Review IDs and category translations require careful handling.
-- All tested order/customer/item/payment/review/seller/product ID relationships had zero unmatched child IDs, except for two product categories without English translations.
+**Status:** Completed
 
-**Open items**
-- Investigate review identifier behavior.
-- Define table grain and safe join paths.
-- Choose an appropriate geolocation mapping strategy.
-- Complete the data dictionary and schema design.
+### Days 3–5 — Python Pipeline, MySQL Schema, Data Loading, and SQL Validation
+- Prepared the data analysis workflow using Python and MySQL.
+- Created the `ecommerce_analytics` database and loaded the nine source datasets.
+- Validated table row counts and reviewed key relationships.
+- Checked joins and data consistency before conducting business analysis.
 
-### Day 2 - Data Modeling and MySQL Setup
+**Status:** Completed
 
-**Completed**
-- Documented table grain, primary/composite keys, relationships, and safe join considerations in `reports/data_model.md`.
-- Generated `outputs/data_dictionary.csv`, documenting 9 datasets and 52 columns.
-- Created the `ecommerce_analytics` database in MySQL 8.0.
-- Created and populated all nine relational tables.
-- Imported and verified all source datasets against their expected row counts.
-- Executed six foreign-key integrity checks; all returned zero unmatched rows.
+### Days 6–8 — Revenue, Order, and Delivery Analysis
+- Analyzed payment values, order volumes, and monthly trends.
+- Investigated delivery performance, late deliveries, and customer experience indicators.
+- Reconciled detailed payment records against monthly payment totals.
+- Confirmed a monthly reconciliation difference of R$0.00 and identified one order without a payment record.
 
-**Database validation results**
+**Status:** Completed
 
-| Table | Rows loaded |
-|---|---:|
-| Customers | 99,441 |
-| Orders | 99,441 |
-| Order items | 112,650 |
-| Order payments | 103,886 |
-| Order reviews | 99,224 |
-| Products | 32,951 |
-| Sellers | 3,095 |
-| Category translation | 71 |
-| Geolocation | 1,000,163 |
+### Days 9–10 — Customer Intelligence and Repeat Purchasing
+- Analyzed unique, one-time, and repeat customers.
+- Calculated the repeat-customer rate and repeat-purchase intervals.
+- Examined repeat-purchase timing, including same-day and shorter-interval purchases.
+- Explored customer purchasing behavior and geographic distribution.
 
-**Key modeling decisions**
-- Use `customer_unique_id` to identify customers across multiple customer records.
-- Preserve order items, payment records, and reviews at their appropriate levels of detail.
-- Avoid directly joining order items and payments before aggregation, as this can inflate totals.
-- Account for duplicate geolocation prefixes before using geolocation in analytical joins.
-- Preserve review records even when review IDs repeat; do not assume `review_id` is unique.
+**Status:** Completed
 
-**Open items**
-- Complete further data-quality checks, including key uniqueness and value/date validation.
-- Define and validate SQL business metrics.
-- Reconcile revenue and order metrics before building Power BI visuals.
+### Days 11–12 — Statistical Investigation and Evidence Checks
+- Investigated customer purchasing patterns and repeat-purchase timing.
+- Validated analytical outputs against supporting SQL queries.
+- Checked payment reconciliation, record counts, and consistency of key business metrics.
+- Documented findings and supporting evidence in the reports directory.
 
-## Day 3 - SQL Business Analysis & Customer Intelligence
+**Status:** Completed
 
-**Objective:** Use SQL to analyze revenue, order behavior, product categories, customer retention, delivery performance, and customer experience.
+### Days 13–15 — Power BI Report and Core Release
+- Built a five-page Power BI report covering executive overview, revenue and product performance, customer intelligence, delivery performance, and category performance.
+- Added KPI cards, charts, slicers, and category-level comparisons.
+- Verified the data model relationships and reviewed visual titles, labels, and formatting.
+- Saved dashboard screenshots for project documentation.
 
-**Work completed:**
-- Created SQL analysis scripts for revenue and order analysis.
-- Analyzed product and category performance.
-- Investigated customer purchasing frequency and repeat-customer behavior.
-- Evaluated delivery performance and customer review patterns.
-- Documented delivery and customer experience findings.
+**Status:** Completed
 
-**Key findings:**
-- Identified 96,096 unique customers.
-- Found 2,997 repeat customers, representing a repeat-customer rate of approximately 3.12%.
-- Identified the distribution of customers by number of orders.
+### Days 16–18 — Technical Polish and Justified Extensions
+- Review SQL scripts, data validation logic, and analytical metric definitions.
+- Check consistency between SQL findings and Power BI measures.
+- Review repository organization and identify opportunities for justified analytical improvements.
 
-**Deliverables:**
-- `sql/01_revenue_order_analysis.sql`
-- `sql/02_product_category_analysis.sql`
-- `sql/03_customer_intelligence.sql`
-- `sql/04_delivery_performance.sql`
-- `sql/05_customer_experience_analysis.sql`
-- `reports/delivery_performance_findings.md`
-- `reports/customer_experience_findings.md`
+**Status:** Pending final verification
 
-**Skills practiced:** SQL aggregations, joins, customer-level analysis, business metrics, and analytical reporting.
+### Days 19–20 — Documentation, Findings, Screenshots, and Interview Preparation
+- Prepare a consolidated README describing the project, technology stack, findings, and dashboard.
+- Verify dashboard screenshot paths and repository links.
+- Finalize business recommendations and document analytical limitations.
+- Prepare a concise project explanation for portfolio reviews and interviews.
 
----
+**Status:** In progress
 
-## Day 4 - Seller Performance Analysis
+## SQL Analysis
 
-**Objective:** Evaluate seller performance using sales, delivery timeliness, and customer review indicators.
+The project includes nine SQL analysis scripts covering:
 
-**Work completed:**
-- Developed SQL queries to analyze seller-level performance.
-- Examined seller-associated product sales.
-- Analyzed late-delivery patterns.
-- Evaluated customer ratings associated with sellers.
-- Documented the findings and their potential business implications.
+1. Revenue and order analysis
+2. Payment and revenue validation
+3. Delivery performance
+4. Customer experience and reviews
+5. Seller performance
+6. Geographic analysis
+7. Customer purchasing behavior
+8. Repeat-customer analysis
+9. Repaeat-purchase timing
 
-**Deliverables:**
-- `sql/06_seller_performance_analysis.sql`
-- `reports/seller_performance_findings.md`
+Supporting documentation and outputs are available in the reports/ and outputs/ directories.
 
-**Skills practiced:** SQL joins, aggregations, seller-level KPIs, delivery analysis, and business reporting.
 
----
 
-## Day 5 - Geographic Analysis
 
-**Objective:** Understand customer and seller distribution across Brazilian states and investigate geographic patterns in sales and freight costs.
+## Dashboard Preview
+ 
+The Power BI report contains five pages designed to explore different aspects of e-commerce performance.
 
-**Work completed:**
-- Analyzed the geographic distribution of customers.
-- Compared state-level customer counts.
-- Evaluated seller distribution across states.
-- Analyzed delivered product sales by customer state.
-- Compared same-state and cross-state seller-to-customer transactions.
-- Examined product sales and freight values across geographic transaction groups.
+1. Executive Overview
 
-**Key findings:**
-- Identified 96,096 unique customers in the customer dataset.
-- S+�o Paulo (SP) had the highest customer count, with 40,302 customers.
-- S+�o Paulo also had the largest seller presence, with 1,849 out of 3,095 sellers.
-- Cross-state seller-item transactions recorded approximately 9.09 million in product sales and 1.66 million in freight values.
-- Same-state seller-item transactions recorded approximately 4.13 million in product sales and 0.54 million in freight values.
+![alt text](page-1-executive-overview.png)
 
-**Deliverables:**
-- `sql/07_geographic_analysis.sql`
-- `reports/geographic_analysis_findings.md`
+Highlights overall payment value, order volume, average order value, repeat-customer rate, monthly trends, and leading product categories.
 
-**Skills practiced:** Geographic segmentation, SQL aggregation, state-level comparisons, and freight analysis.
+2. Revenue & Product Performance
 
-**Methodological note:** Same-state and cross-state figures are based on seller-item transaction groups. An order may contain items from multiple sellers, so these groups should not be interpreted as mutually exclusive unique-order counts.
+![alt text](page-2-revenue-product.png)
 
----
+Explores product sales contribution, order-item volume by category, and the relationship between product prices and freight costs.
 
-## Day 6 - Customer Purchasing Behavior & Order Value Analysis
+3. Customer Intelligence
 
-**Objective:** Analyze payment-based order values, delivered-order payment metrics, and customer spending distributions.
+![alt text](page-3-customer-intelligence.png)
 
-**Work completed:**
-- Calculated average recorded payment value per order.
-- Analyzed the distribution of orders across payment-value bands.
-- Investigated zero-value orders and their associated payment types and order statuses.
-- Calculated payment metrics for delivered orders.
-- Aggregated recorded payments by unique customer.
-- Segmented customers into spending bands.
+Examines one-time versus repeat customers, repeat-purchase timing, and the geographic distribution of customers.
 
-**Key findings:**
-- Analyzed 99,440 orders with recorded payment information.
-- Average recorded payment value per order was approximately 160.99.
-- Total recorded payment value across these orders was approximately 16.01 million.
-- Orders in the 100-249.99 payment-value band formed the largest segment, accounting for approximately 38.69% of orders.
-- Three zero-value orders were identified; all were canceled and associated with the `not_defined` payment type.
-- Delivered orders with recorded payments had an average payment value of approximately 159.86.
-- Among 96,095 customers with recorded payments, approximately 85.17% had total recorded payments below 250.
+4. Order & Delivery Performance
 
-**Deliverables:**
-- `sql/08_customer_purchasing_behavior.sql`
-- `reports/customer_purchasing_behavior_findings.md`
+![alt text](page-4-delivery-performance.png)
 
-**Skills practiced:** Order-level aggregation, customer-level spending analysis, conditional aggregation, distribution analysis, and business interpretation.
+Evaluates delivery outcomes, late-delivery rates, monthly delivery times, and actual versus estimated delivery performance.
 
-**Methodological notes:**
-- Payment value is not equivalent to profit or net recognized revenue.
-- Customer spending metrics include recorded payments across order statuses.
-- Orders without payment records are excluded from payment-based calculations.
-- Zero-value and canceled-order records are retained rather than removed from the source data.
+5. Category Performance
 
-### Day 7: Revenue & Order Analysis — Validation and Reconciliation
+![alt text](page-5-category-performance.png)
 
-**Objective:** Validate the accuracy of revenue and payment analysis by reconciling monthly payment values, checking payment-to-order integrity, and verifying payment totals across order statuses.
+Compares product categories by sales value, order-item volume, average item price, and contribution to total product sales.
 
-**Tasks completed**
-- Reconciled monthly payment values against the overall recorded payment total.
-- Verified payment records against the `orders` table.
-- Identified orders without payment records using a `LEFT JOIN`.
-- Validated payment totals across all eight order statuses.
-- Created `reports/revenue_order_validation.md` to document validation results and key observations.
 
-**Key findings**
-- Total payment records: 103,886.
-- Orders with payment records: 99,440.
-- Orders with multiple payment records: 2,961.
-- Total recorded payment value: R$16,008,872.12.
-- Monthly-to-overall payment reconciliation difference: R$0.00.
-- Unmatched payment records: 0.
-- Orders without payment records: 1, including one delivered order.
-- Delivered orders: 96,478, of which 96,477 have payment records.
-- Delivered-order payment value: R$15,422,461.77.
+## Key Business Findings
 
-**Methodology notes**
-- Used aggregate reconciliation queries to compare monthly and overall payment totals.
-- Used `LEFT JOIN` to identify unmatched payment records and orders without payment records.
-- Used `COUNT(DISTINCT order_id)` to count orders separately from payment records.
-- Treated payment values as recorded transaction amounts, not profit.
-- Documented the missing payment record for further investigation.
+### Revenue & Payments
 
-**Skills practiced:** SQL aggregation, `LEFT JOIN`, `COUNT(DISTINCT)`, data integrity validation, financial reconciliation, and technical documentation.
+- Total recorded payment value: R$16,008,872.12
+- Orders with payment records: 99,440
+- Payment records: 103,886
+- Orders with multiple payment records: 2,961
+- Orders without a payment record: 1
+- Unmatched payment records: 0
+- Difference between detailed and monthly payment totals: R$0.00
 
-**Deliverable:** `reports/revenue_order_validation.md`
+Payment value represents recorded customer payments; it should not be interpreted as profit or accounting-recognized net revenue.
 
-**Status:** Completed and pushed to GitHub.
+### Customer Retention
 
-**Commit:** `a7942c4` — Day 7: Add revenue and order validation report.
+- Unique customers: 96,096
+- One-time customers: 93,099
+- Repeat customers: 2,997
+- Repeat-customer rate: 3.12%
+- Repeat-purchase events: 3,345
+- Average interval between repeat purchases: 78.2 days
+
+Approximately 51% of repeat-purchase events occurred within 30 days, including same-day events. This is an opportunity to investigate post-purchase engagement and customer retention.
+
+### Geographic Performance
+
+- São Paulo (SP) recorded 40,302 unique customers.
+- São Paulo (SP) had 1,849 sellers in the analyzed dataset.
+
+This concentration makes São Paulo an important market for further geographic and operational analysis.
+
+### Delivery Performance
+
+The dashboard tracks delivered-order rates, late-delivery rates, average delivery time, and actual versus estimated delivery time. These measures help identify delivery patterns that may affect customer experience.
+
+*All findings describe the analyzed dataset and are not necessarily representative of current e-commerce market conditions.*
+
+## Business Recommendations
+
+Based on the observed patterns, the following areas merit further investigation:
+
+1. Improve customer retention: Investigate why the repeat-customer rate is low and test post-purchase engagement strategies.
+
+2. Analyze repeat-purchase timing: Evaluate customer cohorts and categories associated with shorter repeat-purchase intervals.
+
+3. Monitor delivery reliability: Investigate late-delivery patterns by time period, geography, seller, and order characteristics.
+
+4. Optimize category strategy: Compare category-level sales, order volume, and average item prices before making inventory or marketing decisions.
+
+5. Maintain data quality: Continue validating payment totals, order relationships, and KPI definitions as the analysis expands.
+
+These are analytical recommendations, not proven causal effects.
+
 
 
 ## Dataset Attribution and License
@@ -293,6 +323,11 @@ The dataset is distributed under the **CC BY-NC-SA 4.0** license. Review the ori
 
 ## Author
 
-Mukesh Samarit
+**Mukesh Samarit**
+Aspiring Data Analyst | SQL · Python · Power BI · MySQL
 
-Data Analytics Portfolio Project
+**GitHub:** https://www.github.com/MSDIAN
+
+**LinkedIn:** https://www.linkedin.com/in/mukesh-samarit
+
+**PortFolio:** https://mukesh-portfolio-navy.vercel.app/

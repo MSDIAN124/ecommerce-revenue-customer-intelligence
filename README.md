@@ -71,7 +71,7 @@ ecommerce-revenue-customer-intelligence/
 ├── docs/
 │   ├── E-Commerce_Revenue_Customer_Intelligence_Project_Report.docx
 |   ├── Project_Progress_Log.docx
-|   └── dashboard_screenshot/
+|   └── dashboard_screenshots/
 |       ├── page-1-executive-overview.png
 |       ├── page-2-revenue-product.png
 |       ├── page-3-customer-intelligence.png
@@ -194,7 +194,7 @@ Important principles:
 - Check consistency between SQL findings and Power BI measures.
 - Review repository organization and identify opportunities for justified analytical improvements.
 
-**Status:** Pending final verification
+**Status:** Completed
 
 ### Days 19–20 — Documentation, Findings, Screenshots, and Interview Preparation
 - Prepare a consolidated README describing the project, technology stack, findings, and dashboard.
@@ -202,7 +202,7 @@ Important principles:
 - Finalize business recommendations and document analytical limitations.
 - Prepare a concise project explanation for portfolio reviews and interviews.
 
-**Status:** In progress
+**Status:** Completed
 
 ## SQL Analysis
 

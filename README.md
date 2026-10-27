@@ -132,7 +132,7 @@ Important principles:
 
 ## Progress Log
 
- For a day-by-day record of project development, including completed tasks, analytical findings, validation checks, deliverables, and pending work, see [`reports/PROJECT_PROGRESS_LOG.md`](docs/PROJECT_PROGRESS_LOG.docx).
+ For a day-by-day record of project development, including completed tasks, analytical findings, validation checks, deliverables, and pending work, see [`docs/PROJECT_PROGRESS_LOG.docx`](docs/PROJECT_PROGRESS_LOG.docx).
 
 ### Day 1 — Dataset Inventory and Initial Validation
 - Identified and reviewed the nine source datasets.

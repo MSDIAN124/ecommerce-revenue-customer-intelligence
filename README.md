@@ -49,8 +49,8 @@ This project investigates order and payment performance, delivery operations, re
 | 9-10 | Customer intelligence and repeat purchasing | Completed |
 | 11-12 | Statistical investigation and evidence checks | Completed |
 | 13-15 | Power BI report and core release | Completed |
-| 16-18 | Technical polish and justified extensions | Planned |
-| 19-20 | Documentation, findings, screenshots, and interview preparation | Planned |
+| 16-18 | Technical polish and justified extensions | Completed |
+| 19-20 | Documentation, findings, screenshots, and interview preparation | Completed |
 
 
 ## Data Model & Validation
@@ -69,12 +69,14 @@ The analysis uses nine related datasets covering customers, orders, order items,
 ```text
 ecommerce-revenue-customer-intelligence/
 ├── docs/
-│   └── dashboard_screenshot/
-|     ├── page-1-executive-overview.png
-|     ├── page-2-revenue-product.png
-|     ├── page-3-customer-intelligence.png
-|     ├── page-4-delivery-performance.png
-|     └── page-5-category-performance.png
+│   ├── E-Commerce_Revenue_Customer_Intelligence_Project_Report.docx
+|   ├── Project_Progress_Log.docx
+|   └── dashboard_screenshot/
+|       ├── page-1-executive-overview.png
+|       ├── page-2-revenue-product.png
+|       ├── page-3-customer-intelligence.png
+|       ├── page-4-delivery-performance.png
+|       └── page-5-category-performance.png
 ├── sql/
 │   ├── 01_revenue_order_analysis.sql
 │   ├── 02_product_category_analysis.sql
@@ -84,7 +86,8 @@ ecommerce-revenue-customer-intelligence/
 |   ├── 06_seller_performance_analysis.sql
 |   ├── 07_geographic_analysis.sql
 |   ├── 08_customer_purchasing_behavior.sql
-│   └── 09_repeat_purchase_timing.sql
+|   ├── 09_repeat_purchase_timing.sql
+│   └── 10_data_quality_validation.sql
 ├── reports/
 |   ├── business_questions.md
 │   ├── data_model.md
@@ -101,7 +104,7 @@ ecommerce-revenue-customer-intelligence/
 |   └── missing_values_report.csv
 ├── powerbi/
 |   └── Ecommerce_Revenue_Customer_Intelligence_Dashboard.pbix
-├── scr/
+├── src/
 |   ├── create_data_dictionary.py
 |   ├── create_data_quality
 |   ├── inspect_dataset.py
@@ -128,6 +131,8 @@ Important principles:
 - Document limitations and unresolved data-quality issues.
 
 ## Progress Log
+
+ For a day-by-day record of project development, including completed tasks, analytical findings, validation checks, deliverables, and pending work, see [`reports/PROJECT_PROGRESS_LOG.md`](reports/PROJECT_PROGRESS_LOG.md).
 
 ### Day 1 — Dataset Inventory and Initial Validation
 - Identified and reviewed the nine source datasets.
@@ -320,9 +325,33 @@ https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 The dataset is distributed under the **CC BY-NC-SA 4.0** license. Review the original license and attribution requirements before redistributing or publishing derived material. The original raw CSV files are not included in this repository.
 
+
+#### How to Use the Dashboard
+
+1. **Download the project:** Clone or download this GitHub repository.
+2. **Open Power BI:** Open `powerbi/Ecommerce_Revenue_Customer_Intelligence_Dashboard.pbix` using Power BI Desktop.
+3. **Start with the overview:** Review the headline KPIs, monthly payment trends, and leading product categories.
+4. **Explore the dashboard pages:** Navigate through the available pages to analyse product performance, customer intelligence, delivery performance, and category performance.
+5. **Apply filters:** Use the available slicers, such as year and order status where applicable, to explore different segments of the data.
+6. **Interact with visuals:** Select chart elements to explore related information across connected visuals.
+7. **Review the insights:** Use the dashboard alongside the project documentation to understand the findings and their limitations.
+
+**Requirements:** Microsoft Power BI Desktop. Additional setup may be required if the report's data sources need to be configured or refreshed.
+
+**Important:** Recorded payment value represents payment transactions in the dataset; it should not be interpreted as profit or net recognized revenue.
+
+
+
+
 ## Project Status
 
-**In progress.** Final analytical findings, dashboard screenshots, metric reconciliation, and recommendations will be added after validation and implementation.
+**Dashboard and Repository: Completed**
+
+The five-page Power BI dashboard, nine SQL analysis scripts, dashboard screenshots, and README documentation have been published to GitHub.
+
+**Remaining Deliverable:** A detailed Word project report (`.docx`) covering the project objectives, dataset, data preparation, SQL analysis, dashboard design, key findings, business recommendations, and limitations.
+
+The project will be considered fully documented once the final report is completed and added to the repository.
 
 ## Author
 

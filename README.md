@@ -197,15 +197,15 @@ Important principles:
 ### Days 16–18 — Technical Polish and Justified Extensions
 - Reviewed SQL scripts, data validation logic, and analytical metric definitions.
 - Checked consistency between SQL findings and Power BI measures.
-- Reviewed repository organization and identify opportunities for justified analytical improvements.
+- Reviewed repository organization and identified opportunities for justified analytical improvements.
 
 **Status:** Completed
 
 ### Days 19–20 — Documentation, Findings, Screenshots, and Interview Preparation
-- Prepare a consolidated README describing the project, technology stack, findings, and dashboard.
-- Verify dashboard screenshot paths and repository links.
-- Finalize business recommendations and document analytical limitations.
-- Prepare a concise project explanation for portfolio reviews and interviews.
+- Prepared a consolidated README describing the project, technology stack, findings, and dashboard.
+- Verified dashboard screenshots paths and repository links.
+- Finalized business recommendations and document analytical limitations.
+- Prepared a concise project explanation for portfolio reviews and interviews.
 
 **Status:** Completed
 

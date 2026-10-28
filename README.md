@@ -206,7 +206,7 @@ Important principles:
 
 ## SQL Analysis
 
-The project includes nine SQL analysis scripts covering:
+The project includes ten SQL analysis scripts covering:
 
 1. Revenue and order analysis
 2. Product and category performance
@@ -217,6 +217,8 @@ The project includes nine SQL analysis scripts covering:
 7. Geographic analysis
 8. Customer purchasing behavior and spending distributions
 9. Repeat-purchase timing
+10. Data quality and Relationship validation
+
 
 Supporting documentation and outputs are available in the reports/ and outputs/ directories.
 
@@ -347,7 +349,7 @@ The dataset is distributed under the **CC BY-NC-SA 4.0** license. Review the ori
 
 **Dashboard and Repository: Completed**
 
-The five-page Power BI dashboard, nine SQL analysis scripts, dashboard screenshots, and README documentation have been published to GitHub.
+The five-page Power BI dashboard, 10 SQL analysis scripts, dashboard screenshots, and README documentation have been published to GitHub.
 
 **Remaining Deliverable:** A detailed Word project report (`.docx`) covering the project objectives, dataset, data preparation, SQL analysis, dashboard design, key findings, business recommendations, and limitations.
 

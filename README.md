@@ -70,26 +70,26 @@ The analysis uses nine related datasets covering customers, orders, order items,
 ecommerce-revenue-customer-intelligence/
 ├── docs/
 │   ├── E-Commerce_Revenue_Customer_Intelligence_Project_Report.docx
-|   ├── Project_Progress_Log.docx
-|   └── dashboard_screenshots/
-|       ├── page-1-executive-overview.png
-|       ├── page-2-revenue-product.png
-|       ├── page-3-customer-intelligence.png
-|       ├── page-4-delivery-performance.png
-|       └── page-5-category-performance.png
+│   ├── Project_Progress_Log.docx
+│   └── dashboard_screenshots/
+│       ├── page-1-executive-overview.png
+│       ├── page-2-revenue-product.png
+│       ├── page-3-customer-intelligence.png
+│       ├── page-4-delivery-performance.png
+│       └── page-5-category-performance.png
 ├── sql/
 │   ├── 01_revenue_order_analysis.sql
 │   ├── 02_product_category_analysis.sql
-|   ├── 03_customer_intelligence.sql
-|   ├── 04_delivery_performance.sql
-|   ├── 05_customer_experience_analysis.sql
-|   ├── 06_seller_performance_analysis.sql
-|   ├── 07_geographic_analysis.sql
-|   ├── 08_customer_purchasing_behavior.sql
-|   ├── 09_repeat_purchase_timing.sql
+│   ├── 03_customer_intelligence.sql
+│   ├── 04_delivery_performance.sql
+│   ├── 05_customer_experience_analysis.sql
+│   ├── 06_seller_performance_analysis.sql
+│   ├── 07_geographic_analysis.sql
+│   ├── 08_customer_purchasing_behavior.sql
+│   ├── 09_repeat_purchase_timing.sql
 │   └── 10_data_quality_validation.sql
 ├── reports/
-|   ├── business_questions.md
+│   ├── business_questions.md
 │   ├── data_model.md
 │   ├── revenue_order_validation.md
 │   ├── delivery_performance_findings.md
@@ -97,24 +97,26 @@ ecommerce-revenue-customer-intelligence/
 │   ├── seller_performance_findings.md
 │   ├── geographic_analysis_findings.md
 │   ├── customer_purchasing_behavior_findings.md
-│   └── repeat_purchase_analysis.md
+│   ├── repeat_purchase_analysis.md
+│   └── data_quality_validation.md
 ├── outputs/
-|   ├── data_dictionary.csv
-|   ├── dataset_inventory.csv
-|   └── missing_values_report.csv
+│   ├── data_dictionary.csv
+│   ├── dataset_inventory.csv
+│   └── missing_values_report.csv
 ├── powerbi/
-|   └── Ecommerce_Revenue_Customer_Intelligence_Dashboard.pbix
+│   └── Ecommerce_Revenue_Customer_Intelligence_Dashboard.pbix
 ├── src/
-|   ├── create_data_dictionary.py
-|   ├── create_data_quality_report.py
-|   ├── inspect_dataset.py
-|   ├── inspect_mapping_issues.py
-|   ├── inspect_review_duplicates.py
-|   ├── prepare_reviews_for_mysql.py
-|   ├── validate_dataset.py
-|   └── validate_relationships.py
+│   ├── create_data_dictionary.py
+│   ├── create_data_quality_report.py
+│   ├── inspect_dataset.py
+│   ├── inspect_mapping_issues.py
+│   ├── inspect_review_duplicates.py
+│   ├── prepare_reviews_for_mysql.py
+│   ├── validate_dataset.py
+│   └── validate_relationships.py
 └── README.md
 ```
+
 
 ## Data Quality and Methodology
 
@@ -193,9 +195,9 @@ Important principles:
 **Status:** Completed
 
 ### Days 16–18 — Technical Polish and Justified Extensions
-- Review SQL scripts, data validation logic, and analytical metric definitions.
-- Check consistency between SQL findings and Power BI measures.
-- Review repository organization and identify opportunities for justified analytical improvements.
+- Reviewed SQL scripts, data validation logic, and analytical metric definitions.
+- Checked consistency between SQL findings and Power BI measures.
+- Reviewed repository organization and identify opportunities for justified analytical improvements.
 
 **Status:** Completed
 
@@ -220,7 +222,7 @@ The project includes ten SQL analysis scripts covering:
 7. Geographic analysis
 8. Customer purchasing behavior and spending distributions
 9. Repeat-purchase timing
-10. Data quality and Relationship validation
+10. Data quality and relationship validation
 
 
 Supporting documentation and outputs are available in the reports/ and outputs/ directories.

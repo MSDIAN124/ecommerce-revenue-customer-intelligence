@@ -106,9 +106,9 @@ ecommerce-revenue-customer-intelligence/
 |   └── Ecommerce_Revenue_Customer_Intelligence_Dashboard.pbix
 ├── src/
 |   ├── create_data_dictionary.py
-|   ├── create_data_quality
+|   ├── create_data_quality_report.py
 |   ├── inspect_dataset.py
-|   ├── inspect_mapping_issue.py
+|   ├── inspect_mapping_issues.py
 |   ├── inspect_review_duplicates.py
 |   ├── prepare_reviews_for_mysql.py
 |   ├── validate_dataset.py
@@ -118,17 +118,20 @@ ecommerce-revenue-customer-intelligence/
 
 ## Data Quality and Methodology
 
-Initial checks cover file inventory, missing values, duplicate records, key uniqueness, foreign-key matches, and category mappings. Additional checks will validate date logic, table grain, join cardinality, and metric reconciliation.
+Data-quality checks cover file inventory, missing values, duplicate records, key uniqueness, foreign-key matches, category mappings, and selected relationship validations. Additional analyses include date logic, table grain, join cardinality, and metric reconciliation, where applicable.
+
+The validation of `order_items` confirmed that all 112,650 records reference existing product and seller IDs, with zero unmatched product IDs and zero unmatched seller IDs in the checks performed. Revenue and payment reconciliation checks were also performed to assess consistency between recorded payment values and monthly totals.
 
 Important principles:
 
 - Preserve original source files unchanged.
 - Do not assume that missing values always indicate errors.
 - Do not assume repeated identifiers always represent duplicate records.
-- Avoid joins that multiply item, payment, or review records.
+- Consider table grain and join cardinality to avoid multiplying item, payment, or review records.
 - Do not equate recorded item value with profit or treat every canceled order as a realized financial loss.
 - Separate observed associations from causal explanations.
-- Document limitations and unresolved data-quality issues.
+- Document methodology, limitations, and unresolved data-quality issues.
+- Interpret validation results within the scope of the checks actually performed; passing selected checks does not guarantee that the entire dataset is free from data-quality issues.
 
 ## Progress Log
 
@@ -349,15 +352,19 @@ The dataset is distributed under the **CC BY-NC-SA 4.0** license. Review the ori
 
 **Dashboard and Repository: Completed**
 
-The five-page Power BI dashboard, 10 SQL analysis scripts, dashboard screenshots, and README documentation have been published to GitHub.
+The five-page Power BI dashboard, 10 SQL analysis scripts, dashboard screenshots, README documentation, and detailed Word project report (`.docx`) have been published to GitHub.
 
-**Remaining Deliverable:** A detailed Word project report (`.docx`) covering the project objectives, dataset, data preparation, SQL analysis, dashboard design, key findings, business recommendations, and limitations.
+**Documentation: Completed**
 
-The project will be considered fully documented once the final report is completed and added to the repository.
+The project report documents the project objectives, dataset, data preparation, SQL analysis, dashboard design, key findings, business recommendations, and limitations.
+
+The repository brings together the analysis scripts, dashboard, supporting reports, validation findings, and visual documentation in one place for review and reproducibility.
+
 
 ## Author
 
 **Mukesh Samarit**
+-------------------
 Aspiring Data Analyst | SQL · Python · Power BI · MySQL
 
 **GitHub:** https://www.github.com/MSDIAN

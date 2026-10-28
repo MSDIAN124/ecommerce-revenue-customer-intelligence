@@ -203,8 +203,8 @@ Important principles:
 
 ### Days 19–20 — Documentation, Findings, Screenshots, and Interview Preparation
 - Prepared a consolidated README describing the project, technology stack, findings, and dashboard.
-- Verified dashboard screenshots paths and repository links.
-- Finalized business recommendations and document analytical limitations.
+- Verified dashboard screenshot paths and repository links.
+- Finalized business recommendations and documented analytical limitations.
 - Prepared a concise project explanation for portfolio reviews and interviews.
 
 **Status:** Completed
@@ -369,8 +369,8 @@ The repository brings together the analysis scripts, dashboard, supporting repor
 -------------------
 Aspiring Data Analyst | SQL · Python · Power BI · MySQL
 
-**GitHub:** https://www.github.com/MSDIAN
+**GitHub:** https://www.github.com/MSDIAN124
 
 **LinkedIn:** https://www.linkedin.com/in/mukesh-samarit
 
-**PortFolio:** https://mukesh-portfolio-navy.vercel.app/
+**Portfolio:** https://mukesh-portfolio-navy.vercel.app/
